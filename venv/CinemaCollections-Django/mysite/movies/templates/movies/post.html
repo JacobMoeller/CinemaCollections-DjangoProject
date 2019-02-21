@@ -1,0 +1,12 @@
+<!--Formats each movie page with the title, poster, release year, synopsis, traler link, and filmid-->
+
+{% extends "personal/header.html" %}
+
+{% block content %}
+			<h1>{{film.title}}</h1>
+			<img src="{{film.image}}" style='max-height:400px;' alt="face">
+			<h3>Year: {{film.year}}</h3>
+			<h3>Synopsis: {{film.syn}}</h3>
+			<iframe src= "{{film.trailer}}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+			<h6>FilmID: {{film.filmid}}</h6>	
+{% endblock %}

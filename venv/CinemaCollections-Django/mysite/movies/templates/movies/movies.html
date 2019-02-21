@@ -1,0 +1,13 @@
+<!-- Prints out a list of all movie titles from the database, and makes eac hthem into a link
+	 to there respective pages -->
+{% extends "personal/header.html" %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+		{% for movies in object_list %}
+		<h5><a href=" /movies/{{movies.filmid}}"> {{movies.title}}</a></h5>
+		{% endfor %}
+	{% else %}
+		<h5>You must login in order to view the list of movies and log posts</h5>
+	{% endif %}
+{% endblock %}

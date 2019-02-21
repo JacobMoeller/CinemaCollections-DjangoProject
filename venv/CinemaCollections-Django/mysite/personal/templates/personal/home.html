@@ -1,0 +1,18 @@
+<!-- Allows the user to login/logout and gives a different message depending on whether or not the user is logged in-->
+
+{% extends "personal/header.html" %}
+
+{% include 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+<p>Hello! Welcome to Cinema Collections!</p>
+
+{% include "personal/includes/htmlsnippet.html" %}
+{% endblock %}

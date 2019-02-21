@@ -1,0 +1,13 @@
+<!--Uses a for loop to print out every blog post-->
+
+{% extends "personal/header.html" %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+		{% for post in object_list %}
+		<h5>{{ post.date|date:"Y-m-d" }}<a href="/blog/{{post.id}}"> {{post.title}}</a></h5>
+		{% endfor %}
+	{% else %}
+		<h5>You must login in order to view the list of movies and log posts</h5>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,82 @@
+<!-- This HTML file creates the navigation bar, as well as the general look of the website.
+	 it is extended into every .html file-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Cinema Collections</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#D8D7D7">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			  <div class="col-sm-2">
+				  <br>
+				  <center>
+					<img src="{% static 'personal/img/rollfilm.png' %}" class="responsive-img" style='max-height:100px;' alt="face">
+				  </center>
+			  </div>
+			  <div class="col-sm-10">
+				  <br>
+				  <center>
+				  <blockquote class="blockquote text-center">
+					  <p class="mb-0">If a million people see my movie, I hope they see a million different movies.</p>
+					  <footer class="blockquote-footer">Quentin Tarantino</footer>
+					</blockquote>
+				  </center>
+			  </div>
+		</div><hr>
+
+		<div class="row">
+		  <div class="col-sm-12">
+		 
+		   <!-- Great, til you resize. -->
+			<!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="/">Cinema Collections</a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			     <li><a href='/'>Home</a></li>
+				<li><a href='/movies/'>Movies</a></li>
+				<li><a href='/blog/'>Blog</a></li>
+				<li><a href='/contact/'>Contact</a></li>
+				<li><a href='/admin/'>Admin</a></li>
+				<li><a href='/accounts/login/'>Login</a></li>
+				<li><a href='/accounts/signup'>Sign Up</a></li>
+			    </ul>
+			  </div>
+			</nav>
+		  </div> <!--col-sm-2-->
+		  <div class="col-sm-10">
+		  
+			<div class='container-fluid'>
+			<br><br>
+			   {% block content %}
+			   {% endblock %}	
+			</div>
+		  </div>
+		</div> 
+	</div>
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+		</div>
+	</footer>	
+	
+</body>
+
+</html>
